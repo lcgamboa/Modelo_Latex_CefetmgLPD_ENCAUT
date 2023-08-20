@@ -11,9 +11,8 @@
 \usepackage[T1]{fontenc}		
 \usepackage[utf8]{inputenc}		%% Para converter automaticamente acentos como digitados normalmente no teclado. Mude utf8 para latin1 se precisar. 
 
-\usepackage{lmodern} %no caso do modelo Latex, pode-se usar a família de fontes lmodern como aqui indicado, no lugar de Arial e Times New Roman.
-
-
+%\usepackage{lmodern} %no caso do modelo Latex, pode-se usar a família de fontes lmodern como aqui indicado, no lugar de Arial e Times New Roman.
+\usepackage{times}
 
 \usepackage{lastpage}
 \usepackage{indentfirst}		
@@ -26,7 +25,6 @@
 \usepackage{xurl}
 \usepackage{pdflscape}
 \usepackage[printonlyused]{acronym}
-
 
 \graphicspath{{Figuras/}} % Diretório onde estão localizadas as figuras
 
@@ -385,8 +383,9 @@ Em um trabalho de TCC é comum que capítulos inteiros sejam remanejados para me
 %Exemplo de declarar figuras
 \begin{figure}[h]
 	\larguratexto{12cm}  %Mesma largura da ilustração, dada em "[width=12cm]" abaixo
+	\caption{Lajes de concreto e detalhes da montagem dos ímãs.}
+	\label{fig:lajes_concreto}
 	\begin{center}
-		\caption[Figura]{Lajes de concreto e detalhes da montagem dos ímãs.}\label{fig:lajes_concreto}
 		\includegraphics[width=12cm]{cap4_1.jpg}
 		\fonte{\cite{bib:mattos}} %%Indicar a fonte consultada (elemento obrigat\'orio, mesmo que seja produ\c{c}\~ao do pr\'oprio autor).
 	\end{center}
@@ -402,7 +401,7 @@ Segue exemplo de referenciamento em texto corrido. É possível notar que a pont
 
 \begin{equation}
 	\label{eq:Aw0}
-	a_{AW0} = \frac{Força~máxima~dos~motores}{Massa~do~veículo~descarregado} = \frac{1800N}{AW0/g}
+^	a_{AW0} = \frac{\textit{Força~máxima~dos~motores}}{\textit{Massa~do~veículo~descarregado}} = \frac{1800N}{AW0/g}
 	=\frac{1800N}{21.000N/g}=0,086g
 \end{equation}
 
@@ -410,7 +409,7 @@ e
 
 \begin{equation}
 	\label{eq:Aw1}
-	a_{AW1} = \frac{Força~máxima~dos~motores}{Massa~do~veículo~descarregado} = \frac{1800N}{AW1/g}
+	a_{AW1} = \frac{\textit{Força~máxima~dos~motores}}{\textit{Massa~do~veículo~descarregado}} = \frac{1800N}{AW1/g}
 	=\frac{1800N}{31.680N/g}=0,056g
 \end{equation}
 
@@ -431,7 +430,7 @@ Após todas as verificações conclui-se que o MagLev sempre irá operar em cond
 
 \begin{equation}
 	\label{eq:Aw0_2}
-	a_{AW0} = \frac{Força~máxima~dos~motores}{Massa~do~veículo~descarregado} = \frac{1800N}{AW0/g}
+	a_{AW0} = \frac{\textit{Força~máxima~dos~motores}}{\textit{Massa~do~veículo~descarregado}} = \frac{1800N}{AW0/g}
 	=\frac{1800N}{21.000N/g}=0,086g
 \end{equation}
 
@@ -439,7 +438,7 @@ e
 
 \begin{equation}
 	\label{eq:Aw1_2}
-	a_{AW1} = \frac{Força~máxima~dos~motores}{Massa~do~veículo~descarregado} = \frac{1800N}{AW1/g}
+	a_{AW1} = \frac{\textit{Força~máxima~dos~motores}}{\textit{Massa~do~veículo~descarregado}} = \frac{1800N}{AW1/g}
 	=\frac{1800N}{31.680N/g}=0,056g
 \end{equation}
 
@@ -494,10 +493,11 @@ A capa possui alguns elementos obrigatórios e deve seguir a ordem estabelecida 
 A Capa mostrada na Figura 6.1 possui todos os elementos obrigatórios estabelecidos pelas normas NBR 14724 \cite{bib:abnt14724} e NBR 12225 \cite{bib:abnt1225}. A capa deve obedecer exatamente o que é mostrado na figura, essa padronização busca trazer qualidade e boa apresentação visual das monografias produzidas pelos estudantes do CEFET-MG, unidade Leopoldina.
 
 \begin{figure}[h]
-	\larguratexto{16cm}  %Mesma largura da ilustração, dada em "[width=12cm]" abaixo
+	\larguratexto{15cm}  %Mesma largura da ilustração, dada em "[width=12cm]" abaixo
+	\caption{Lombada e capa.}
+	\label{fig:lombada}
 	\begin{center}
-		\caption[Figura]{Lombada e capa.}\label{fig:lajes_concreto}
-		\includegraphics[width=16cm]{lombada.jpg}
+		\includegraphics[width=15cm]{lombada.pdf}
 		\fonte{do autor. Todas as medidas estão em milímetros.} %%Indicar a fonte consultada (elemento obrigat\'orio, mesmo que seja produ\c{c}\~ao do pr\'oprio autor).
 	\end{center}
 \end{figure}
@@ -517,7 +517,6 @@ Colocar aqui sugestões de trabalhos futuros.
 \postextual 
 
 \bibliography{referencias.bib}
-
 
 
 

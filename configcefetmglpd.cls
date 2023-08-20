@@ -66,11 +66,11 @@
 
 %% --
 \addto\captionsbrazil{
-  \renewcommand{\contentsname}{Sumário \label{sumario_num}} 
-  \renewcommand{\bibname}{Referências}
-  \renewcommand{\indexname}{Índice}
-  \renewcommand{\listfigurename}{Lista de Ilustrações}
-  \renewcommand{\listtablename}{Lista de Tabelas}
+  \renewcommand{\contentsname}{SUMÁRIO \label{sumario_num}} 
+  \renewcommand{\bibname}{REFERÊNCIAS}
+  \renewcommand{\indexname}{ÍNDICE}
+  \renewcommand{\listfigurename}{LISTA DE ILUSTRAÇÕES}
+  \renewcommand{\listtablename}{LISTA DE TABELAS}
   \renewcommand{\figurename}{Figura}
 }
 
@@ -235,7 +235,38 @@
 \raggedright
 } 
 
-\renewcommand{\thesubsection}{\textbf{{\thesection}.\arabic{subsection}}}
+
+\let\oldchapter\chapter
+\renewcommand{\chapter}{\@ifstar{\mychapterstar}{\mychapter}}
+\newcommand{\mychapterstar}[2][]{\oldchapter*{\MakeUppercase{#2}}}
+\newcommand{\mychapter}[1]{\oldchapter{\MakeUppercase{#1}}}
+
+
+\newcommand\capmystring[1]{\capmystringaux#1\relax}
+\def\capmystringaux#1#2\relax{\MakeUppercase{#1}\MakeLowercase{#2}}
+%\newcommand\xcapmystring[1]{\expandafter\capmystring\expandafter{#1}}
+
+\let\oldsection\section
+\renewcommand{\section}{\@ifstar{\mysubsectionstar}{\mysection}}
+\newcommand{\mysectionstar}[1]{\oldsection*{\capmystring{#1}}}
+\newcommand{\mysection}[1]{\oldsection{\capmystring{#1}}}
+
+\let\oldsubsection\subsection
+\renewcommand{\subsection}{\@ifstar{\mysubsectionstar}{\mysubsection}}
+\newcommand{\mysubsectionstar}[1]{\oldsubsection*{\capmystring{#1}}}
+\newcommand{\mysubsection}[1]{\oldsubsection{\capmystring{#1}}}
+   
+\let\oldsubsubsection\subsubsection
+\renewcommand{\subsubsection}{\@ifstar{\mysubsubsectionstar}{\mysubsubsection}}
+\newcommand{\mysubsubsectionstar}[1]{\oldsubsubsection*{\capmystring{#1}}}
+\newcommand{\mysubsubsection}[1]{\oldsubsubsection{\capmystring{#1}}}
+
+\let\oldsubsubsubsection\subsubsubsection
+\renewcommand{\subsubsubsection}{\@ifstar{\mysubsubsubsectionstar}{\mysubsubsubsection}}
+\newcommand{\mysubsubsubsectionstar}[1]{\oldsubsubsubsection*{\capmystring{#1}}}
+\newcommand{\mysubsubsubsection}[1]{\oldsubsubsubsection{\capmystring{#1}}}
+
+\renewcommand{\thesubsection}{{\thesection}.\arabic{subsection}}
 
 \renewcommand{\thesubsubsection}
 {{\thesection}.\arabic{subsection}.\arabic{subsubsection}}
@@ -304,12 +335,12 @@
     \cftinserthook{toc}{AAA}}
   
 \renewcommand{\tocprintchapternonum}{
-    \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{2em}}}
-  
+    \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{2em}}}  
+    
 %------------------------------------
 
-\setsecheadstyle{\bfseries \Large \flushleftright}
-\setsubsecheadstyle{\bfseries \large \flushleftright}
+\setsecheadstyle{\bfseries \normalsize \flushleftright}
+\setsubsecheadstyle{\bfseries \normalsize \flushleftright}
 \setsubsubsecheadstyle{\bfseries \normalsize \flushleftright}
 \setsubsubsubsecheadstyle{\bfseries \normalsize \flushleftright}
 
@@ -331,16 +362,17 @@
   \def\printchaptertitle##1{%
    \bfseries
    \ifthenelse{\boolean{innonumchapter}}{
-    \LARGE\centering %\MakeUppercase
+    \normalsize \centering \MakeUppercase
     {##1\break}}{%
-    \huge\ifthenelse{\boolean{AppendixAnexo}}{
-      \centering
+    \normalsize \ifthenelse{\boolean{AppendixAnexo}}{
+      \centering \MakeUppercase
         {##1\break}
       }{%
        \flushleftright 
         \hfill
           \parbox[t]{\textwidth-36pt}
            {
+           \normalsize \MakeUppercase
         {##1}}}
     }    
   }
@@ -348,11 +380,13 @@
 \renewcommand{\printchapternum}{
      \tocprintchapter
      \setboolean{innonumchapter}{false}
-     \huge\bfseries 
+     \normalsize\bfseries 
      \space\thechapter\space%
      \ifthenelse{\boolean{AppendixAnexo}}{
      }{} 
   }
+  
+    
   
     
 \renewcommand\printchapternonum{
@@ -1006,5 +1040,6 @@ Aprovado em: \printaaprovacaoDia ~de \printaaprovacaoMes ~de \printaaprovacaoAno
 
 
 % ---
-% --- 
+% ---  
+
 
