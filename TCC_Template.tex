@@ -41,10 +41,11 @@
 \autor{Nome completo} %%O nome completo do autor deve ser colocado dentro das chaves {}
 \autorVirg{Sobrenome, Nome do autor} %%Acrescentar o sobrenome do autor, separado por vírgula, antes do restante do nome do autor. Ex.: Silva, José da
 \autorSobrenome{Sobrenome} %% Apenas o último sobrenome dever ser acrescentado dentro das chaves
+\matricula{12345678} %%Matrícula do aluno autor do trabalho
 
 \local{Leopoldina, MG} %%Não alterar
 \mesentrega{12} %%Colocar o mes da entrega dentro das chaves {}, em número. Por exemplo, 1 para janeiro; 2 para fevereiro ...
-\data{2021} %%Colocar APENAS o ano da entrega dentro das chaves {}. Por exemplo, 2019.
+\data{2023} %%Colocar APENAS o ano da entrega dentro das chaves {}. Por exemplo, 2019.
 
 \orientador[Orientador]{Nome do orientador} %%Colocar o nome completo do orientador(a) dentro das chaves {}. Entre os colchetes [], use [Orientador] ou [Orientadora] para identificação
 \coorientador[Coorientador]{Nome do coorientador (se hover)} %%Colocar o nome completo do co-orientador(a) dentro das chaves {}. Entre os colchetes [], use [Orientador] ou [Orientadora] para identificação
@@ -59,7 +60,7 @@
 
 \programa{Engenharia de Controle e Automação} %% Não alterar
 \objeto{Trabalho de Conclusão de Curso}  %% Trabalho de Conclusão de Curso - graduação ; Dissertação - mestrado
-\natureza{\printaobjeto ~com o objetivo da obtenção do grau de Bacharel em \printaprograma ~do \printainstituicao } %% Não alterar
+\natureza{\printaobjeto ~apresentado ao Curso de \printaprograma do \printainstituicao, do Campus Leopoldina, como parte do requisito para obtenção do título de Engenheiro de Controle e Automação.} %% Não alterar
 
 % Data da aprovação
 \aprovacaoDia{Dia} %% Colocar dentro das chaves {} o NÚMERO do dia da Data de aprovação. Ex: 15
@@ -100,12 +101,13 @@
 %%---------------- Elementos Pré-textuais -----------------------------
 
 
-%% Capa do Trabalho. Não está configurada atualmente, manter comentada a linha debaixo
-%\printacapa
+%% Capa do Trabalho. (Não alterar)
+\printacapa
 
 %% Folha de rosto (Não alterar)
 \printafolhaderosto
 
+%% O aluno deverá solicitar a ficha na página da Biblioteca de Leopoldina. 
 %% Ficha catalográfica. AO IMPRIMIR, DEIXAR NO VERSO DA FOLHA DE ROSTO. (Não alterar)
 \printacatalog  
 
@@ -116,9 +118,8 @@
 
 %% Dedicatória. ELEMENTO OPCIONAL. Caso desejar não usar, acrescentar % antes de todas as linhas até \end{dedicatoria}
  \begin{dedicatoria}
- 	\textit{
   		A dedicatória deve ser escrita com o estilo de texto “Dedicatória” e ficar no final da página. Neste local colocam-se pequenos parágrafos (não muitos) homenageando as pessoas importantes da sua trajetória acadêmica.\\  		
-  		Este não é um item obrigatório do TCC \cite{bib:abnt14724}. Caso opte por não colocar dedicatória, deve-se retirar esta seção.}
+  		Este não é um item obrigatório do TCC \cite{bib:abnt14724}. Caso opte por não colocar dedicatória, deve-se retirar esta seção.
  \end{dedicatoria}
 
  
@@ -143,7 +144,7 @@ Os agradecimentos devem ser escritos com estilo “Corpo de texto”. O ideal é
 \aplicaresumo
 
 Escrever o resumo do TCC. Tente colocar o resumo em apenas uma página. Caso não seja possível, utilizar no máximo duas. Este é um item obrigatório \cite{bib:abnt14724}. Quanto a sua extensão os resumos devem ter de 150 a 500 palavras. A elaboração deste resumo deve seguir a ABNT NBR 6028 \cite{bib:abnt6028}. O texto do resumo deve estar em parágrafo único.\\[18pt]
-Palavras-chave: As palavras-chave devem figurar logo abaixo do resumo, antecedidas da expressão “Palavras-chave:”, separadas entre si por ponto e finalizadas também por ponto \cite{bib:abnt6028}. %Finalizadas por ponto e aplicaializadas por letra maiuscula.
+\textbf{Palavras-chave:} As palavras-chave devem figurar logo abaixo do resumo, antecedidas da expressão “Palavras-chave:”, separadas entre si por ponto e finalizadas também por ponto \cite{bib:abnt6028}. %Finalizadas por ponto e aplicaializadas por letra maiuscula.
 \end{resumo_cefetmg}
  
  
@@ -155,11 +156,12 @@ Palavras-chave: As palavras-chave devem figurar logo abaixo do resumo, antecedid
 
 Escrever a tradução do resumo do TCC. Tente colocar o abstract em apenas uma página. Caso não seja possível, utilizar no máximo duas. O texto do abstract deve estar em parágrafo único.\par
 Uma das vantagens de se ter o abstract no TCC é que, quando alguém fizer uma busca na internet por palavras-chaves em inglês, seu trabalho terá mais chances de ser encontrado. Este é um item obrigatório \cite{bib:abnt14724}.\\[18pt]
-Keywords: Palavra 1. Palavra2. Palavra 3. %Finalizadas por ponto e aplicaializadas por letra maiuscula.
+\textbf{Keywords:} Palavra 1. Palavra2. Palavra 3. %Finalizadas por ponto e aplicaializadas por letra maiuscula.
  \end{otherlanguage*}
 \end{abstract_cefetmg}
 
 
+\printatermo
 
 %% Lista de ilustrações.Sao consideradas ilustrações: desenhos, esquemas, fluxogramas, figuras, fotografias, gr\'aficos, mapas, organogramas, plantas, quadros, entre outros. Tabelas não são consideradas ilustrações.
 

@@ -56,6 +56,7 @@
 \newcommand{\orientadornome}{Orientador:}
 \newcommand{\coorientadornome}{Coorientador:}
 \newcommand{\folhadeaprovacaonome}{Folha de Aprovação}
+\newcommand{\termocompromissonome}{Termo de Responsabilidade}
 \newcommand{\resumonome}{Resumo} 
 \newcommand{\listadesimbolosnome}{Lista de Símbolos}
 \newcommand{\listadesiglasnome}{Lista de Abreviaturas e Siglas}
@@ -440,6 +441,9 @@
 %\providecommand{\printames}{}
 %\newcommand{\mes}[1]{\renewcommand{\printames}{#1}}
 
+\providecommand{\printamatricula}{}
+\newcommand{\matricula}[1]{\renewcommand{\printamatricula}{#1}}
+
 \providecommand{\printainstituicao}{}
 \newcommand{\instituicao}[1]{\renewcommand{\printainstituicao}{#1}}
 
@@ -460,7 +464,7 @@
 \newcommand{\programa}[1]{\renewcommand{\printaprograma}{#1}}
 
 \providecommand{\printasubtitulo}{}
-\newcommand{\subtitulo}[1]{\renewcommand{\printasubtitulo}{#1}}
+\newcommand{\subtitulo}[1]{\renewcommand{\printasubtitulo}{\capmystring{#1}}}
 \newcommand{\printasubtituloUpper}{\MakeUppercase{\printasubtitulo}}
 
 \providecommand{\printafinalcatalog}{}
@@ -602,20 +606,35 @@
 \newenvironment{capa}{\begin{titlingpage}}{\end{titlingpage}\cleardoublepage}
 
 \newcommand{\printacapa}{
-  \begin{capa}
-   \begin{center}
+  \begin{center}
     {
-    \bfseries \MakeUppercase{\printainstituicao} \par %\MakeUppercase{\printafaculdade} \par \MakeUppercase{\printaprograma}}
-    \MakeUppercase{Unidade Leopoldina} \par \MakeUppercase{\printaprograma}}
-    \vfill
-    {
-    \bfseries \printaautor}
-    \vfill
-    {\bfseries \printatitulo \mdseries \IfNonempty{\printasubtitulo}{\textbf{:} \printasubtitulo}}
-    \vfill
-    \printalocal \par \printadata 
-   \end{center}
-   \end{capa}
+    \bfseries
+    \MakeUppercase{\printainstituicao}\\
+    \MakeUppercase{CURSO DE \printaprograma}\\
+    \vspace*{80pt}
+    \MakeUppercase{\printaautor}} 
+    \vspace*{40pt}
+    \begin{center} 
+   %{\printaorientadorOU :~\printaorientadorTitulo ~\printaorientador \par }
+   \bfseries
+   \MakeUppercase{\printaorientadorOU :~\printaorientador \par }\\
+    \IfNonempty{\printacoorientador}{
+   %    {\printacoorientadorOU :~\printacoorientadorTitulo ~\printacoorientador}
+		\MakeUppercase{\printacoorientadorOU :~\printacoorientador}
+    }
+    \vspace*{80pt}
+    \end{center}
+    \begin{center}
+      {
+        \bfseries \printatituloUpper 
+        \IfNonempty{\printasubtitulo}{:\\\printasubtitulo}}
+    \end{center}
+    \vspace*{\fill}
+  \end{center}	
+  \begin{center}  
+    \bfseries \printalocal \par \printadata   
+  \end{center}
+\cleardoublepage
 }
 
 \newenvironment{folhaderosto}[1][\folhaderostonome]{\clearpage\bookmarkphantom{#1}}{\newpage}
@@ -624,33 +643,33 @@
 \newcommand{\folhaderostocont}{
   \begin{center}
     {
-    \printaautor} 
-    \vspace*{\fill}
-	%\vspace*{7em}
-    \begin{center}
+    \bfseries
+    \MakeUppercase{\printaautor}} 
+    \vspace*{140pt}
+        \begin{center}
       {
-      \printatituloUpper \mdseries 
-        \IfNonempty{\printasubtitulo}{: \printasubtituloUpper}}
+        \bfseries \printatituloUpper 
+        \IfNonempty{\printasubtitulo}{:\\\printasubtitulo}}
     \end{center}
-    \vspace*{\fill}
+    \vspace{100pt}
       \IfNonempty{\printanatureza}{
       \hspace{.45\textwidth}
       \begin{minipage}{.5\textwidth}
       	\SingleSpacing
          \printanatureza
       \end{minipage}
-       \vspace*{\fill}
     }
-  \end{center}
-  \begin{center} 
-   %{\printaorientadorOU :~\printaorientadorTitulo ~\printaorientador \par }
-   {\printaorientadorOU :~\printaorientador \par }
-    \IfNonempty{\printacoorientador}{
-   %    {\printacoorientadorOU :~\printacoorientadorTitulo ~\printacoorientador}
-		{\printacoorientadorOU :~\printacoorientador}
-    }
-    \vfill
   \end{center}	
+  \begin{center} 
+   \hspace{.42\textwidth}
+    \begin{minipage}{.5\textwidth}
+    {\printaorientadorOU :~\printaorientador  }\\
+    \IfNonempty{\printacoorientador}{
+      {\printacoorientadorOU :~\printacoorientador}
+    }
+    \end{minipage}
+  \end{center}
+  \vspace*{\fill}
   \begin{center}  
     \printalocal \par \printadata   
   \end{center}
@@ -726,20 +745,21 @@
 
 \newcommand{\folhaaprov}{
 \begin{center}
-    {
-    \printaautor}
+    {\bfseries \MakeUppercase{\printaautor}}
 
-    \vfill
+    \vspace{20pt}
     \begin{center}
       {
-      \printatitulo \mdseries \IfNonempty{\printasubtitulo}{: \printasubtitulo}
+      \bfseries \MakeUppercase{ \printatitulo} \IfNonempty{\printasubtitulo}{: \capmystring{\printasubtitulo}}
     }
     \end{center}
-    \vfill
+    \vspace{80pt}
     
     \hspace{.45\textwidth}
     \begin{minipage}{.5\textwidth}
-              TRABALHO DE CONCLUSÃO DE CURSO SUBMETIDO À BANCA EXAMINADORA INSTITUÍDA PELO CENTRO FEDERAL DE EDUCAÇÃO TECNOLÓGICA DE MINAS GERAIS COMO PARTE DOS REQUISITOS NECESSÁRIOS PARA A OBTENÇÃO DO GRAU DE ENGENHEIRO DE CONTROLE E AUTOMAÇÃO.
+              Trabalho de conclusão de curso apresentado ao Curso de Engenharia de Controle e Automação do Centro Federal de Educação 
+              Tecnológica de Minas Gerais, do Campus Leopoldina, como parte do requisito para obtenção do título de Engenheiro de 
+              Controle e Automação.
     \end{minipage}%
     \vfill
 \end{center}
@@ -776,6 +796,46 @@ Aprovado em: \printaaprovacaoDia ~de \printaaprovacaoMes ~de \printaaprovacaoAno
   \end{folhadeaprovacao}
   \cleardoublepage}
 
+%%%
+    
+\newenvironment{termocompromisso}[1][\termocompromissonome]{
+   \clearpage
+   \bookmarkphantom{#1}
+   \begin{Spacing}{1.0}
+}{\end{Spacing}
+\cleardoublepage}
+
+\newcommand{\termo}{
+\begin{center}
+ \textbf{TERMO DE RESPONSABILIDADE POR AUTORIA DO TRABALHO DE CONCLUSÃO DE CURSO}
+\end{center}
+\vspace{40pt}
+
+Eu, \MakeUppercase{\textbf{\printaautor}}, matrícula \MakeUppercase{\textbf{\printamatricula}}, discente do Curso de Engenharia de
+Controle e Automação, declaro para os devidos fins, que o presente Trabalho de Conclusão de Curso é de minha autoria e que estou 
+ciente dos:
+\begin{itemize}
+ \item Artigos 297 a 299 do Código Penal;
+ \item Decreto-Lei n 2.848 de 7 de dezembro de 1940;
+ \item Lei no 9.610, de 19 de fevereiro de 1998, sobre os Direitos Autorais;
+ \item Regulamento Disciplinar Discente do CEFET-MG;
+ \item E que plágio consiste na reprodução de obra alheia e submissão dela como trabalho próprio ou na inclusão, em trabalho próprio, de ideias, textos, tabelas ou ilustrações (quadros, figuras, gráficos, fotografias, retratos, lâminas, desenhos, organogramas, fluxogramas, plantas, mapas e outros) transcritos de obras de terceiros sem a devida e correta citação da referência.
+\end{itemize}
+
+Por ser verdade, e por ter ciência do referido artigo, firmo a presente declaração, isentando o(a) professor(a) 
+orientador(a) \MakeUppercase{\textbf{\printaorientador}} e o Centro Federal de Educação Tecnológica de Minas Gerais, 
+Campus Leopoldina, de qualquer responsabilidade.
+
+\begin{center}
+\assinatura{Assinatura do Discente}
+\end{center}
+}
+
+\newcommand{\printatermo}[1]{
+  \begin{termocompromisso}{#1}
+     \termo
+  \end{termocompromisso}
+  \cleardoublepage}
 
 \newenvironment{dedicatoria}[1][]{
    \ifthenelse{\equal{#1}{}}{
@@ -833,37 +893,25 @@ Aprovado em: \printaaprovacaoDia ~de \printaaprovacaoMes ~de \printaaprovacaoAno
 
 
 \newcommand{\aplicaresumo}{
-  \begin{flushleft}
-  Resumo  do \printaobjeto ~apresentado ao \printasiglaInstituicao ~como parte dos requisitos necessários para a obtenção do grau de Bacharel em \printaprograma.
-  \end{flushleft}
-  \vspace*{2em}
   \begin{center}
     {
-	%\vspace*{7em}
     \begin{center}
       {
-      \printatituloUpper \mdseries 
-        \IfNonempty{\printasubtitulo}{: \printasubtituloUpper}}
+      \bfseries \printatituloUpper \mdseries 
+        \IfNonempty{\printasubtitulo}{: \printasubtitulo}}
     \end{center}
-	\vspace*{2em}
-	\printaautor}
-    \vspace*{2em}
+	\vspace*{40pt}
+	\printaautor \par
+	   {\printaorientador \par }
+    \IfNonempty{\printacoorientador}{
+	   {\printacoorientador}
+    }}
+    \vspace*{20pt}
 	  \begin{center}  
-			\local@mes /\printadata  
+			\bfseries RESUMO
 		\end{center}
   \end{center}
-  \vspace*{1em}
-  \begin{flushleft} 
-   %{\printaorientadorOU :~\printaorientadorTitulo ~\printaorientador \par }
-   {\printaorientadorOU:~\printaorientador \par }
-    \IfNonempty{\printacoorientador}{
-       %{\printacoorientadorOU :~\printacoorientadorTitulo ~\printacoorientador}
-	   {\printacoorientadorOU :~\printacoorientador}
-    }
-    \vspace*{1em}
-  \end{flushleft}
-  
-
+  \vspace*{20pt}
 }
 
 \newenvironment{abstract_cefetmg}[1][\resumonome]{
@@ -874,39 +922,25 @@ Aprovado em: \printaaprovacaoDia ~de \printaaprovacaoMes ~de \printaaprovacaoAno
 
 
 \newcommand{\aplicaabstract}{
-  \begin{flushleft}
-  Abstract  of Final Year Project presented to \printasiglaInstituicao~as a partial fulfillment of the requirements for the Bachelor degree of Control and Automation Engineering.
-  \end{flushleft}
-  \vspace*{2em}
   \begin{center}
     {
-	%\vspace*{7em}
     \begin{center}
       {
-      \printatituloInglesUpper \mdseries 
-        \IfNonempty{\printasubtituloIngles}{: \printasubtituloInglesUpper}}
+      \bfseries \printatituloInglesUpper \mdseries 
+        \IfNonempty{\printasubtituloIngles}{: \printasubtituloIngles}}
     \end{center}
-	\vspace*{2em}
-	\printaautor}
-    \vspace*{2em}
+    	\vspace*{40pt}
+	\printaautor \par
+	   {\printaorientador \par }
+    \IfNonempty{\printacoorientador}{
+	   {\printacoorientador}
+    }}
+    \vspace*{20pt}
 	  \begin{center}  
-			\local@month /\printadata
+			\bfseries ABSTRACT
 		\end{center}
   \end{center}
-  \vspace*{1em}
-  \begin{flushleft} 
-   %{\printaorientadorOU :~\printaorientadorTitulo ~\printaorientador \par }
-   %{\printaorientadorOU :~\printaorientador \par }
-   {Advisor:~\printaorientador \par }
-    \IfNonempty{\printacoorientador}{
-       %{\printacoorientadorOU :~\printacoorientadorTitulo ~\printacoorientador}
-	   %{\printacoorientadorOU :~\printacoorientador}
-	   {Co-Advisor:~\printacoorientador}
-    }
-    \vspace*{1em}
-  \end{flushleft}
-  
-
+  \vspace*{20pt}
 }
 
 %% --
