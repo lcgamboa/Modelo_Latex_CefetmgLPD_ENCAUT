@@ -654,7 +654,7 @@
     \vspace{100pt}
       \IfNonempty{\printanatureza}{
       \hspace{.45\textwidth}
-      \begin{minipage}{.5\textwidth}
+      \begin{minipage}{.49\textwidth}
       	\SingleSpacing
          \printanatureza
       \end{minipage}
@@ -756,10 +756,9 @@
     \vspace{80pt}
     
     \hspace{.45\textwidth}
-    \begin{minipage}{.5\textwidth}
+    \begin{minipage}{.49\textwidth}
               Trabalho de conclusão de curso apresentado ao Curso de Engenharia de Controle e Automação do Centro Federal de Educação 
-              Tecnológica de Minas Gerais, do Campus Leopoldina, como parte do requisito para obtenção do título de Engenheiro de 
-              Controle e Automação.
+              Tecnológica de Minas Gerais, do Campus Leopoldina, como parte do requisito para obtenção do título de Bacharel em Engenharia de Controle e Automação.
     \end{minipage}%
     \vfill
 \end{center}
