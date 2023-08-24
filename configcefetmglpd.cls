@@ -608,25 +608,25 @@
 \newcommand{\printacapa}{
   \begin{center}
     {
-    \bfseries
-    \MakeUppercase{\printainstituicao}\\
+    \bfseries\DoubleSpacing
+    \MakeUppercase{\printainstituicao}\\ 
     \MakeUppercase{CURSO DE \printaprograma}\\
-    \vspace*{80pt}
+    \vspace*{100pt}
     \MakeUppercase{\printaautor}} 
     \vspace*{40pt}
     \begin{center} 
    %{\printaorientadorOU :~\printaorientadorTitulo ~\printaorientador \par }
-   \bfseries
+   \bfseries\DoubleSpacing
    \MakeUppercase{\printaorientadorOU :~\printaorientador \par }\\
     \IfNonempty{\printacoorientador}{
    %    {\printacoorientadorOU :~\printacoorientadorTitulo ~\printacoorientador}
 		\MakeUppercase{\printacoorientadorOU :~\printacoorientador}
     }
-    \vspace*{80pt}
+    \vspace*{50pt}
     \end{center}
     \begin{center}
       {
-        \bfseries \printatituloUpper 
+        \bfseries\DoubleSpacing \printatituloUpper 
         \IfNonempty{\printasubtitulo}{:\\\printasubtitulo}}
     \end{center}
     \vspace*{\fill}
@@ -645,7 +645,7 @@
     {
     \bfseries
     \MakeUppercase{\printaautor}} 
-    \vspace*{140pt}
+    \vspace*{160pt}
         \begin{center}
       {
         \bfseries \printatituloUpper 
@@ -654,7 +654,7 @@
     \vspace{100pt}
       \IfNonempty{\printanatureza}{
       \hspace{.45\textwidth}
-      \begin{minipage}{.49\textwidth}
+      \begin{minipage}{.5\textwidth}
       	\SingleSpacing
          \printanatureza
       \end{minipage}
@@ -747,31 +747,26 @@
 \begin{center}
     {\bfseries \MakeUppercase{\printaautor}}
 
-    \vspace{20pt}
+    \vspace*{20pt}
     \begin{center}
       {
       \bfseries \MakeUppercase{ \printatitulo} \IfNonempty{\printasubtitulo}{: \capmystring{\printasubtitulo}}
     }
     \end{center}
-    \vspace{80pt}
-    
+    \vspace*{110pt}
     \hspace{.45\textwidth}
-    \begin{minipage}{.49\textwidth}
+    \begin{minipage}{.5\textwidth}
               Trabalho de conclusão de curso apresentado ao Curso de Engenharia de Controle e Automação do Centro Federal de Educação 
               Tecnológica de Minas Gerais, do Campus Leopoldina, como parte do requisito para obtenção do título de Bacharel em Engenharia de Controle e Automação.
     \end{minipage}%
-    \vfill
 \end{center}
-
+\vspace*{1pt}
 \begin{flushright}
 Aprovado em: \printaaprovacaoDia ~de \printaaprovacaoMes ~de \printaaprovacaoAno 
 \end{flushright}
-   
-\vfill
 \begin{flushleft} Aprovado por: \end{flushleft}
-
 \begin{flushright}
-\assinatura{\printaorientador, \printaorientadorTitulo, \printasiglaInstituicao ~(\printaorientadorOU)}
+\assinaturah{\printaorientador, \printaorientadorTitulo, \printasiglaInstituicao ~(\printaorientadorOU)}
 \IfNonempty{\printacoorientador}{
 \assinatura{\printacoorientador, \printacoorientadorTitulo, \printasiglaInstituicaoCoorientador ~(\printacoorientadorOU)}} 
 \assinatura{\printaavaliadorUm, \printatitulacaoAvaliadorUm, \printasiglaInstituicaoAvaliadorUm}
@@ -805,10 +800,12 @@ Aprovado em: \printaaprovacaoDia ~de \printaaprovacaoMes ~de \printaaprovacaoAno
 \cleardoublepage}
 
 \newcommand{\termo}{
+\OnehalfSpacing
+\vspace*{10pt}
 \begin{center}
  \textbf{TERMO DE RESPONSABILIDADE POR AUTORIA DO TRABALHO DE CONCLUSÃO DE CURSO}
 \end{center}
-\vspace{40pt}
+\vspace*{40pt}
 
 Eu, \MakeUppercase{\textbf{\printaautor}}, matrícula \MakeUppercase{\textbf{\printamatricula}}, discente do Curso de Engenharia de
 Controle e Automação, declaro para os devidos fins, que o presente Trabalho de Conclusão de Curso é de minha autoria e que estou 
@@ -997,6 +994,15 @@ Campus Leopoldina, de qualquer responsabilidade.
   \rule{\signwidth}{\signthickness}\\
   \nopagebreak #1\par}
   \par\endgroup}
+  
+  
+\newcommand{\assinaturah}[1]{
+  \begingroup\par\raggedleft 
+  \parbox[t]
+  {\signwidth}{\SingleSpacing\raggedleft
+  \rule{\signwidth}{\signthickness}\\
+  \nopagebreak #1\par}
+  \par\endgroup}  
   
 \newcommand{\assinaturaCentro}[1]{
   \begingroup\par\centering
