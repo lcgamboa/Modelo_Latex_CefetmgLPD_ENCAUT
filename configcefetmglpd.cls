@@ -827,7 +827,7 @@ orientador(a) \MakeUppercase{\textbf{\printaorientador}} e o Centro Federal de E
 Campus Leopoldina, de qualquer responsabilidade.
 
 \begin{center}
-\assinatura{Assinatura do Discente}
+\assinaturaCentro{Assinatura do Discente}
 \end{center}
 }
 
@@ -998,6 +998,14 @@ Campus Leopoldina, de qualquer responsabilidade.
   \rule{\signwidth}{\signthickness}\\
   \nopagebreak #1\par}
   \par\endgroup}
+  
+\newcommand{\assinaturaCentro}[1]{
+  \begingroup\par\centering
+  \parbox[t]
+  {\signwidth}{\SingleSpacing\vspace*{\signskip}\centering
+  \rule{\signwidth}{\signthickness}\\
+  \nopagebreak #1\par}
+  \par\endgroup}  
 
 
 %------------------------------------

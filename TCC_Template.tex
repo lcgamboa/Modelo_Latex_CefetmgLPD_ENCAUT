@@ -93,7 +93,7 @@
 % Pacotes para referência bibliográfica. Não alterar as linhas abaixo
 %\usepackage[round, numbers]{natbib} % Referência númérica (não usado nesse trabalho) 
 %\usepackage{natbib} % Referência utilizando o sistema autor-data
-\usepackage[alf]{abntex2cite}
+\usepackage[alf,abnt-emphasize=bf]{abntex2cite}
 
 \begin{document}
 
@@ -246,7 +246,8 @@ A parte textual geralmente conta com um capítulo de introdução, alguns capít
 
 A parte pós-textual conta com bibliografia, apêndices e anexos. A bibliografia contará com um capítulo especial explicando como deve ser feita. Os apêndices são partes do trabalho desenvolvidas pelo aluno, mas que não ficariam adequadas ao desenvolvimento do texto, por este motivo, merecem uma citação no texto indicando que se encontram no apêndice. Os anexos são documentos que complementam as informações da parte textual, mas não são de autoria do estudante, por exemplo datasheets de componentes.
 
-Este modelo conta com uma estrutura de tópicos que gera o sumário automaticamente. Nesta estrutura existem vários níveis, que são associados a “estilos de texto”. Estes estilos de texto serão mostrados na seção \ref{sec:estilo_de_texto}. %referência cruzada
+Este modelo conta com uma estrutura de tópicos que gera o sumário automaticamente. Nesta estrutura existem vários níveis, que são associados a “estilos de texto”.
+%Estes estilos de texto serão mostrados na seção \ref{sec:estilo_de_texto}. %referência cruzada
 
 \section{Exemplos de Níveis das Seções (Este é o Segundo Nível)} %% Título da seção dentro das chaves {}
 \label{sec:exemplos_niveis_secao}
@@ -270,8 +271,9 @@ Corpo do texto corpo do texto corpo do texto corpo do texto corpo do texto corpo
 
 \section{Alíneas e Subalíneas} \label{sec:alineas_subalineas}
 As alíneas são subdivisões de uma seção ou subseção. Elas são precedidas por letras minúsculas e parêntese. 
-As alíneas abaixo estão no estilo de texto “Alínea” e servem como base para terem suas características copiadas com o pincel de 
-formatação do Word. As alíneas devem ser conforme a seguir \cite{bib:abnt6024}:
+%As alíneas abaixo estão no estilo de texto “Alínea” e servem como base para terem suas características copiadas com o
+%pincel de formatação do Word. 
+As alíneas devem ser conforme a seguir \cite{bib:abnt6024}:
 
 %Exemplo para Alíneas
 \begin{enumerate}[label=\alph*)]
@@ -558,19 +560,19 @@ Colocar aqui sugestões de trabalhos futuros.
 %% Apendices
 \begin{apendices}
 
-\chapter{\apendseq O Primeiro Apêndice Deve Ser Colocado Aqui} 
+\chapter{\apendseq O Primeiro Apêndice} 
 %%Digita-se o titulo do apendice mantendo-se, antes, o comando \apendseq, como indicado.
 
 O apêndice deve ser colocado aqui
 
 
-\chapter{\apendseq O Segundo Apêndice Deve Ser Colocado Aqui} 
+\chapter{\apendseq O Segundo Apêndice} 
 %%Digita-se o titulo do apendice mantendo-se, antes, o comando \apendseq, como indicado.
 
 O apêndice deve ser colocado aqui 
 
 
-\chapter{\apendseq O Terceiro Apêndice Deve Ser Colocado Aqui} 
+\chapter{\apendseq O Terceiro Apêndice} 
 %%Digita-se o titulo do apendice mantendo-se, antes, o comando \apendseq, como indicado.
 
 O apêndice deve ser colocado aqui 
@@ -582,14 +584,14 @@ O apêndice deve ser colocado aqui
 %% Anexos
 \begin{anexos}
 
-\chapter{\anexoseq O Primeiro Anexo Deve ser Colocado a Seguir} 
+\chapter{\anexoseq O Primeiro Anexo} 
 %%Digita-se o titulo do anexo mantendo-se, antes, o comando \anexoseq, como indicado.
 
 Corpo do texto
 
 
 
-\chapter{\anexoseq O Segundo Anexo Deve ser Colocado a Seguir} 
+\chapter{\anexoseq O Segundo Anexo} 
 %%Digita-se o titulo do anexo mantendo-se, antes, o comando \anexoseq, como indicado.
 
 Corpo do texto
