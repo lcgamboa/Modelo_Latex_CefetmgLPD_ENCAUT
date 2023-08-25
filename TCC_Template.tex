@@ -48,8 +48,8 @@
 
 \orientador[Orientador]{Nome do orientador} %%Colocar o nome completo do orientador(a) dentro das chaves {}. Entre os colchetes [], use [Orientador] ou [Orientadora] para identificação
 \coorientador[Coorientador]{Nome do coorientador (se hover)} %%Colocar o nome completo do co-orientador(a) dentro das chaves {}. Entre os colchetes [], use [Orientador] ou [Orientadora] para identificação
-\orientadorTitulo{Msc} %%Colocar a titulação do(a) orientador(a) dentro de chaves {}. Ex: Msc., Dr., Dra., etc.
-\coorientadorTitulo{Msc.} %%Colocar a titulação do(a) co-orientador(a) dentro de chaves {}. Ex: Msc., Dr., Dra., etc.
+\orientadorTitulo{Prof. Dsc.} %%Colocar a titulação do(a) orientador(a) dentro de chaves {}. Ex: Msc., Dr., Dra., etc.
+\coorientadorTitulo{Prof. Msc.} %%Colocar a titulação do(a) co-orientador(a) dentro de chaves {}. Ex: Msc., Dr., Dra., etc.
 \siglaInstituicaoCoorientador{CEFET-MG} %% Alterar caso o coorientado não seja do CEFET-MG
 
 \instituicao{Centro Federal de Educação Tecnológica de Minas Gerais} %% Não alterar
@@ -59,7 +59,7 @@
 
 \programa{Engenharia de Controle e Automação} %% Não alterar
 \objeto{Trabalho de Conclusão de Curso}  %% Trabalho de Conclusão de Curso - graduação ; Dissertação - mestrado
-\natureza{\printaobjeto ~apresentado ao Curso de \printaprograma do \printainstituicao, do Campus Leopoldina, como parte do requisito para obtenção do título de Bacharel em Engenharia de Controle e Automação.} %% Não alterar
+\natureza{\printaobjeto ~apresentado ao Curso de \printaprograma ~do \printainstituicao, do Campus Leopoldina, como parte do requisito para obtenção do título de Bacharel em Engenharia de Controle e Automação.} %% Não alterar
 
 % Data da aprovação
 \aprovacaoDia{Dia} %% Colocar dentro das chaves {} o NÚMERO do dia da Data de aprovação. Ex: 15
@@ -67,13 +67,13 @@
 \aprovacaoAno{Ano} %%  Colocar dentro das chaves {} o NÚMERO do ano da Data de aprovação. Ex: 2021
 
 % Dados do Avaliador 1
-\avaliadorUm{Nome e sobrenome} % Nome e sobrenome
-\titulacaoAvaliadorUm{Titulação} % Titulação
+\avaliadorUm{Nome e sobrenome Avaliador 1} % Nome e sobrenome
+\titulacaoAvaliadorUm{Prof. Msc.} % Titulação
 \siglaInstituicaoAvaliadorUm{Instituição} % Sigla da institução de ensino vinculado
 
 % Dados do Avaliador 2
-\avaliadorDois{Nome e sobrenome} % Nome e sobrenome
-\titulacaoAvaliadorDois{Titulação} % Titulação
+\avaliadorDois{Nome e sobrenome Avaliador 2} % Nome e sobrenome
+\titulacaoAvaliadorDois{Prof. Msc.} % Titulação
 \siglaInstituicaoAvaliadorDois{Instituição} % Sigla da institução de ensino vinculado
 
 % Dados do Avaliador 3 (Se houver, apagar o "%" da frente das próximas 3 linhas)
@@ -118,20 +118,20 @@
 %% Dedicatória. ELEMENTO OPCIONAL. Caso desejar não usar, acrescentar % antes de todas as linhas até \end{dedicatoria}
  \begin{dedicatoria}
   		A dedicatória deve ser escrita com o estilo de texto “Dedicatória” e ficar no final da página. Neste local colocam-se pequenos parágrafos (não muitos) homenageando as pessoas importantes da sua trajetória acadêmica.\\  		
-  		Este não é um item obrigatório do TCC \cite{bib:abnt14724}. Caso opte por não colocar dedicatória, deve-se retirar esta seção.
+  		Este não é um item obrigatório do TCC conforme NBR 14724 \cite{bib:abnt14724}. Caso opte por não colocar dedicatória, deve-se retirar esta seção.
  \end{dedicatoria}
 
  
 %% Agradecimentos. ELEMENTO OPCIONAL. Caso desejar não usar, acrescentar % antes de todas as linhas até \end{agradecimentos}
 \begin{agradecimentos}
-Os agradecimentos devem ser escritos com estilo “Corpo de texto”. O ideal é que os agradecimentos não passem de uma página. Os agradecimentos são opcionais \cite{bib:abnt14724}, porém, é altamente recomendável que faça parte do trabalho por ser um espaço para valorização das pessoas que contribuíram de alguma forma.
+Os agradecimentos devem ser escritos com estilo “Corpo de texto”. O ideal é que os agradecimentos não passem de uma página. Os agradecimentos são opcionais conforme a NBR 14724 \cite{bib:abnt14724}, porém, é altamente recomendável que faça parte do trabalho por ser um espaço para valorização das pessoas que contribuíram de alguma forma.
 \end{agradecimentos}
 
 
 %% Epígrafe. ELEMENTO OPCIONAL. Deve conter os dados do autor. A obra usada na epígrafe deve constar nas referências.
 \begin{epigrafemais}
-	“a epígrafe não é obrigatória \cite{bib:abnt14724}, portanto esta página pode ser retirada. Toda epígrafe deve estar entre aspas e no final da página.”\\
-	Colocar aqui o nome do autor
+	`` a epígrafe não é obrigatória conforme a NBR 10520 \cite{bib:abnt10520}, portanto esta página pode ser retirada. Toda epígrafe deve estar entre aspas e no final da página.''\\
+	\raggedleft Colocar aqui o nome do autor
 \end{epigrafemais}
 
 
@@ -149,9 +149,8 @@ O texto do resumo deve estar em parágrafo único. Todas as palavras devem estar
 próprios e nomes científicos, separadas por ponto e vírgula. 
 As palavras-chave são inseridas abaixo do resumo com uma linha de 1,5 em branco separando-as.
 
-\begin{center}
+\noindent
 \textbf{Palavras-chave}: gestação; cuidado pré-natal; Aedes Aegypti; IBGE; Brasil.
-\end{center}
 
 \end{resumo_cefetmg}
  
@@ -165,9 +164,9 @@ As palavras-chave são inseridas abaixo do resumo com uma linha de 1,5 em branco
 Escrever a tradução do resumo do TCC. Uma das vantagens de se ter o abstract no TCC é que, quando alguém fizer uma busca na
 internet por palavras-chaves em inglês, seu trabalho terá mais chances de ser encontrado. 
 
-\begin{center}
+\noindent
 \textbf{Keywords:} Palavra 1. Palavra2. Palavra 3. %Finalizadas por ponto e aplicaializadas por letra maiuscula.
-\end{center}
+
   \end{otherlanguage*}
 \end{abstract_cefetmg}
 
@@ -239,7 +238,7 @@ Este modelo prevê a impressão em anverso (somente frente). Não poderá haver 
 
 \section{Estrutura do Modelo} %% Título da seção dentro das chaves {}
 \label{sec:estrutura_modelo}  %% Palavra chave para referência cruzada no texto. SUGERE-SE colocar ser "sec:" como demostrado no modelo para melhor organização em textos maiores
-O modelo conta com a parte pré-textual (folha de rosto até sumário), que é contada e não numerada \cite{bib:abnt6027}. As partes textual e pós-textual são numeradas com algarismos arábicos. A numeração de páginas prossegue da parte pré-textual.
+O modelo conta com a parte pré-textual (folha de rosto até sumário), que é contada e não numerada NBR 6027 \cite{bib:abnt6027}. As partes textual e pós-textual são numeradas com algarismos arábicos. A numeração de páginas prossegue da parte pré-textual.
 
 A parte textual geralmente conta com um capítulo de introdução, alguns capítulos de desenvolvimento e um capítulo de conclusão. O número de capítulos de cada trabalho é definido entre o orientador e o estudante. Neste modelo serão colocados oito Capítulos, pois, raramente um trabalho conta com tantas seções e é mais fácil adequá-lo as necessidades do estudante, bastando retirar os capítulos excedentes (apagar o capítulo excedente e a quebra de seção abaixo do mesmo).\ac{EX} \ac{MLS}
 
@@ -272,7 +271,7 @@ Corpo do texto corpo do texto corpo do texto corpo do texto corpo do texto corpo
 As alíneas são subdivisões de uma seção ou subseção. Elas são precedidas por letras minúsculas e parêntese. 
 %As alíneas abaixo estão no estilo de texto “Alínea” e servem como base para terem suas características copiadas com o
 %pincel de formatação do Word. 
-As alíneas devem ser conforme a seguir \cite{bib:abnt6024}:
+As alíneas devem ser conforme a seguir NBR 6024 \cite{bib:abnt6024}:
 
 %Exemplo para Alíneas
 \begin{enumerate}[label=\alph*)]
@@ -290,16 +289,16 @@ Do mesmo modo, as subalíneas devem ser conforme as alíneas a seguir:
 %Exemplo para Alíneas e Subalíneas
 \begin{enumerate}[label=\alph*)]
 	\item as subalíneas devem começar por travessão seguido de espaço:
-	\begin{itemize}
-		\item[$-$] este é um exemplo de subalínea;
-		\item[$-$] este é um exemplo de subalínea;
+	\begin{itemize}[left=0.5em]
+	\item[$-$] este é um exemplo de subalínea;
+	\item[$-$] este é um exemplo de subalínea;
 	\end{itemize}
 	\item as subalíneas devem apresentar recuo em relação à alínea;
 	\item o texto da subalínea deve começar por letra minúscula e terminar em ponto-e-vírgula. A última subalínea deve terminar em ponto final, se não houver alínea subsequente;
-	\item a segunda e as seguintes linhas do texto da subalínea começam sob a primeira letra do texto da própria subalínea \cite{bib:abnt6024};
-	\begin{itemize}
-		\item[$-$] este é um exemplo de subalínea;
-		\item[$-$] este é um exemplo de subalínea;
+	\item a segunda e as seguintes linhas do texto da subalínea começam sob a primeira letra do texto da própria subalínea NBR 6024 \cite{bib:abnt6024};
+	\begin{itemize}[left=0.5em]
+	\item[$-$] este é um exemplo de subalínea;
+	\item[$-$] este é um exemplo de subalínea;
 	\end{itemize}
 \end{enumerate}
 

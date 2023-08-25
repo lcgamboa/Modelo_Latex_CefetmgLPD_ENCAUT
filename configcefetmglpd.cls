@@ -653,6 +653,7 @@
       \IfNonempty{\printanatureza}{
       \hspace{.45\textwidth}
       \begin{minipage}{.5\textwidth}
+        \hyphenchar\font=-1 \sloppy
       	\SingleSpacing
          \printanatureza
       \end{minipage}
@@ -669,7 +670,7 @@
   \end{center}
   \vspace*{\fill}
   \begin{center}  
-    \printalocal \par \printadata   
+    \bfseries  \printalocal \par \printadata   
   \end{center}
 }
 
@@ -751,33 +752,40 @@
       \bfseries \MakeUppercase{ \printatitulo} \IfNonempty{\printasubtitulo}{: \capmystring{\printasubtitulo}}
     }
     \end{center}
-    \vspace*{110pt}
+    \vspace*{100pt}
     \hspace{.45\textwidth}
     \begin{minipage}{.5\textwidth}
+              \hyphenchar\font=-1 \sloppy
               Trabalho de conclusão de curso apresentado ao Curso de Engenharia de Controle e Automação do Centro Federal de Educação 
               Tecnológica de Minas Gerais, do Campus Leopoldina, como parte do requisito para obtenção do título de Bacharel em Engenharia de Controle e Automação.
     \end{minipage}%
 \end{center}
-\vspace*{1pt}
-\begin{flushright}
+\begin{flushleft}
 Aprovado em: \printaaprovacaoDia ~de \printaaprovacaoMes ~de \printaaprovacaoAno 
-\end{flushright}
-\begin{flushleft} Aprovado por: \end{flushleft}
-\begin{flushright}
-\assinaturah{\printaorientador, \printaorientadorTitulo, \printasiglaInstituicao ~(\printaorientadorOU)}
+\end{flushleft}
+\begin{center} Banca Examinadora: \end{center}
+\begin{center}
+\OnehalfSpacing
+\vspace*{20pt}
+\printaorientadorTitulo ~\printaorientador - \printaorientadorOU \\ \printasiglaInstituicao \\
 \IfNonempty{\printacoorientador}{
-\assinatura{\printacoorientador, \printacoorientadorTitulo, \printasiglaInstituicaoCoorientador ~(\printacoorientadorOU)}} 
-\assinatura{\printaavaliadorUm, \printatitulacaoAvaliadorUm, \printasiglaInstituicaoAvaliadorUm}
-\assinatura{\printaavaliadorDois, \printatitulacaoAvaliadorDois, \printasiglaInstituicaoAvaliadorDois}
-
+\vspace*{25pt}
+\printacoorientadorTitulo ~\printacoorientador - \printacoorientadorOU \\ \printasiglaInstituicaoCoorientador \\}
+\vspace*{25pt}
+\printatitulacaoAvaliadorUm ~\printaavaliadorUm \\ \printasiglaInstituicaoAvaliadorUm \\
+\vspace*{25pt}
+\printatitulacaoAvaliadorDois ~\printaavaliadorDois \\ \printasiglaInstituicaoAvaliadorDois \\
 \IfNonempty{\printaavaliadorTres}{
-\assinatura{\printaavaliadorTres, \printatitulacaoAvaliadorTres, \printasiglaInstituicaoAvaliadorTres}}
-\end{flushright}
+\vspace*{25pt}
+\printatitulacaoAvaliadorTres ~\printaavaliadorTres \\ \printasiglaInstituicaoAvaliadorTres \\}
+\vspace*{25pt}
+(Assinaturas Digitais)
+\end{center}
 
 \vfill
 
 \begin{center}  
-	\printalocal \par \printadata   
+	\bfseries  \printalocal \par \printadata   
 \end{center}
 
 }
@@ -799,14 +807,15 @@ Aprovado em: \printaaprovacaoDia ~de \printaaprovacaoMes ~de \printaaprovacaoAno
 
 \newcommand{\termo}{
 \OnehalfSpacing
-\vspace*{10pt}
+\vspace*{5pt}
 \begin{center}
  \textbf{TERMO DE RESPONSABILIDADE POR AUTORIA DO TRABALHO DE CONCLUSÃO DE CURSO}
 \end{center}
 \vspace*{40pt}
 
 Eu, \MakeUppercase{\textbf{\printaautor}}, matrícula \MakeUppercase{\textbf{\printamatricula}}, discente do Curso de Engenharia de
-Controle e Automação, declaro para os devidos fins, que o presente Trabalho de Conclusão de Curso é de minha autoria e que estou 
+Controle e Automação, declaro para os devidos fins, que o presente Trabalho de Conclusão de Curso, de título \MakeUppercase{\textbf{\printatitulo}}, 
+é de minha autoria e que estou 
 ciente dos:
 \begin{itemize}
  \item Artigos 297 a 299 do Código Penal;
@@ -816,11 +825,15 @@ ciente dos:
  \item E que plágio consiste na reprodução de obra alheia e submissão dela como trabalho próprio ou na inclusão, em trabalho próprio, de ideias, textos, tabelas ou ilustrações (quadros, figuras, gráficos, fotografias, retratos, lâminas, desenhos, organogramas, fluxogramas, plantas, mapas e outros) transcritos de obras de terceiros sem a devida e correta citação da referência.
 \end{itemize}
 
-Por ser verdade, e por ter ciência do referido artigo, firmo a presente declaração, isentando o(a) professor(a) 
-orientador(a) \MakeUppercase{\textbf{\printaorientador}} e o Centro Federal de Educação Tecnológica de Minas Gerais, 
+Por ser verdade, e por ter ciência do referido artigo, firmo a presente declaração, isentando 
+o(a) professor(a) orientador(a) \MakeUppercase{\textbf{\printaorientador}}
+\IfNonempty{\printacoorientador}{, o(a) professor(a) coorientador(a) \MakeUppercase{\textbf{\printacoorientador}} } e o Centro Federal de Educação Tecnológica de Minas Gerais, 
 Campus Leopoldina, de qualquer responsabilidade.
 
 \begin{center}
+\vspace*{20pt}
+Leopoldina \printaaprovacaoDia ~de \printaaprovacaoMes ~de \printaaprovacaoAno 
+
 \assinaturaCentro{Assinatura do Discente}
 \end{center}
 }
@@ -859,10 +872,10 @@ Campus Leopoldina, de qualquer responsabilidade.
 \newenvironment{epigrafemais}[1][]{
    \ifthenelse{\equal{#1}{}}{
     \bookmarkphantom{\epigrafenome}
-    }{\pretextualchapter{#1}}
-    \vspace*{\fill}
-    \begin{citacao}{}}
-    {\end{citacao}  \cleardoublepage}
+    }{\pretextualchapter{ #1}}
+    \vspace*{\fill} 
+    \begin{citacao}{}\normalsize \normalfont}
+    {\end{citacao} \cleardoublepage}
   
   
 \setlength\absleftindent{0cm}
