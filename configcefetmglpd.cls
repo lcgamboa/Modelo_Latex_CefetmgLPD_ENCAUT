@@ -611,19 +611,17 @@
     \bfseries\DoubleSpacing
     \MakeUppercase{\printainstituicao}\\ 
     \MakeUppercase{CURSO DE \printaprograma}\\
-    \vspace*{100pt}
+    \vspace*{135pt}
     \MakeUppercase{\printaautor}} 
-    \vspace*{40pt}
-    \begin{center} 
-   %{\printaorientadorOU :~\printaorientadorTitulo ~\printaorientador \par }
-   \bfseries\DoubleSpacing
-   \MakeUppercase{\printaorientadorOU :~\printaorientador \par }\\
-    \IfNonempty{\printacoorientador}{
-   %    {\printacoorientadorOU :~\printacoorientadorTitulo ~\printacoorientador}
-		\MakeUppercase{\printacoorientadorOU :~\printacoorientador}
-    }
     \vspace*{50pt}
-    \end{center}
+%     \begin{center} 
+%    \bfseries\DoubleSpacing
+%    \MakeUppercase{\printaorientadorOU :~\printaorientador \par }\\
+%     \IfNonempty{\printacoorientador}{
+% 		\MakeUppercase{\printacoorientadorOU :~\printacoorientador}
+%     }
+%     \end{center}
+     \vspace*{50pt}
     \begin{center}
       {
         \bfseries\DoubleSpacing \printatituloUpper 
@@ -661,7 +659,7 @@
     }
   \end{center}	
   \begin{center} 
-   \hspace{.42\textwidth}
+   \hspace{.45\textwidth}
     \begin{minipage}{.5\textwidth}
     {\printaorientadorOU :~\printaorientador  }\\
     \IfNonempty{\printacoorientador}{
