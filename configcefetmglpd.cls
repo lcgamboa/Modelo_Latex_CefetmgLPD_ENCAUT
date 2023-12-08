@@ -236,36 +236,36 @@
 \raggedright
 } 
 
-
-\let\oldchapter\chapter
-\renewcommand{\chapter}{\@ifstar{\mychapterstar}{\mychapter}}
-\newcommand{\mychapterstar}[2][]{\oldchapter*{\MakeUppercase{#2}}}
-\newcommand{\mychapter}[1]{\oldchapter{\MakeUppercase{#1}}}
+%Parou de funcionar depois da atualização do \MakeUppercase{}
+%\let\oldchapter\chapter
+%\renewcommand{\chapter}{\@ifstar{\mychapterstar}{\mychapter}}
+%\newcommand{\mychapterstar}[2][]{\oldchapter*{\MakeUppercase{#2}}}
+%\newcommand{\mychapter}[1]{\oldchapter{\MakeUppercase{#1}}}
 
 
 \newcommand\capmystring[1]{\capmystringaux#1\relax}
 \def\capmystringaux#1#2\relax{\MakeUppercase{#1}\MakeLowercase{#2}}
-%\newcommand\xcapmystring[1]{\expandafter\capmystring\expandafter{#1}}
 
-\let\oldsection\section
-\renewcommand{\section}{\@ifstar{\mysubsectionstar}{\mysection}}
-\newcommand{\mysectionstar}[1]{\oldsection*{\capmystring{#1}}}
-\newcommand{\mysection}[1]{\oldsection{\capmystring{#1}}}
-
-\let\oldsubsection\subsection
-\renewcommand{\subsection}{\@ifstar{\mysubsectionstar}{\mysubsection}}
-\newcommand{\mysubsectionstar}[1]{\oldsubsection*{\capmystring{#1}}}
-\newcommand{\mysubsection}[1]{\oldsubsection{\capmystring{#1}}}
-   
-\let\oldsubsubsection\subsubsection
-\renewcommand{\subsubsection}{\@ifstar{\mysubsubsectionstar}{\mysubsubsection}}
-\newcommand{\mysubsubsectionstar}[1]{\oldsubsubsection*{\capmystring{#1}}}
-\newcommand{\mysubsubsection}[1]{\oldsubsubsection{\capmystring{#1}}}
-
-\let\oldsubsubsubsection\subsubsubsection
-\renewcommand{\subsubsubsection}{\@ifstar{\mysubsubsubsectionstar}{\mysubsubsubsection}}
-\newcommand{\mysubsubsubsectionstar}[1]{\oldsubsubsubsection*{\capmystring{#1}}}
-\newcommand{\mysubsubsubsection}[1]{\oldsubsubsubsection{\capmystring{#1}}}
+%Parou de funcionar depois da atualização do \MakeUppercase{}
+% \let\oldsection\section
+% \renewcommand{\section}{\@ifstar{\mysubsectionstar}{\mysection}}
+% \newcommand{\mysectionstar}[1]{\oldsection*{\capmystring{#1}}}
+% \newcommand{\mysection}[1]{\oldsection{\capmystring{#1}}}
+% 
+% \let\oldsubsection\subsection
+% \renewcommand{\subsection}{\@ifstar{\mysubsectionstar}{\mysubsection}}
+% \newcommand{\mysubsectionstar}[1]{\oldsubsection*{\capmystring{#1}}}
+% \newcommand{\mysubsection}[1]{\oldsubsection{\capmystring{#1}}}
+%    
+% \let\oldsubsubsection\subsubsection
+% \renewcommand{\subsubsection}{\@ifstar{\mysubsubsectionstar}{\mysubsubsection}}
+% \newcommand{\mysubsubsectionstar}[1]{\oldsubsubsection*{\capmystring{#1}}}
+% \newcommand{\mysubsubsection}[1]{\oldsubsubsection{\capmystring{#1}}}
+% 
+% \let\oldsubsubsubsection\subsubsubsection
+% \renewcommand{\subsubsubsection}{\@ifstar{\mysubsubsubsectionstar}{\mysubsubsubsection}}
+% \newcommand{\mysubsubsubsectionstar}[1]{\oldsubsubsubsection*{\capmystring{#1}}}
+% \newcommand{\mysubsubsubsection}[1]{\oldsubsubsubsection{\capmystring{#1}}}
 
 \renewcommand{\thesubsection}{{\thesection}.\arabic{subsection}}
 
