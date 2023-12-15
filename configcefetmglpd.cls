@@ -827,7 +827,7 @@ ciente dos:
 
 Por ser verdade, e por ter ciência do referido artigo, firmo a presente declaração, isentando 
 o(a) professor(a) orientador(a) \MakeUppercase{\textbf{\printaorientador}}
-\IfNonempty{\printacoorientador}{, o(a) professor(a) coorientador(a) \MakeUppercase{\textbf{\printacoorientador}} } e o Centro Federal de Educação Tecnológica de Minas Gerais, 
+\IfNonempty{\printacoorientador}{, o(a) professor(a) coorientador(a) \MakeUppercase{\textbf{\printacoorientador}}}, os membros da banca examinadora e o Centro Federal de Educação Tecnológica de Minas Gerais, 
 Campus Leopoldina, de qualquer responsabilidade.
 
 \begin{center}
